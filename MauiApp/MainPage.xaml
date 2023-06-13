@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MauiAuthApp.Converters"
+             xmlns:viewModels="clr-namespace:MauiAuthApp.ViewModel"
+             x:DataType="viewModels:MainPageViewModel"
+             x:Class="MauiAuthApp.MainPage"
+             Shell.NavBarIsVisible="False"
+             IsEnabled="{Binding IsBusy, Converter={StaticResource NegateBooleanConverter}}">
+    <ContentPage.Resources>
+        <converters:NegateBooleanConverter x:Key="NegateBooleanConverter"/>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="20,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="ava_logo.png"
+                SemanticProperties.Description="Logo Avanade"
+                HeightRequest="100"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, Avanade!"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Desafio Login MSAL Login para acessar API segura"
+                SemanticProperties.Description="Desafio Login MSAL Login para acessar API segura"
+                FontSize="18"
+                HorizontalOptions="Center"/>
+
+            <Label HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" VerticalOptions="Center" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Tecnologias Utilizadas&#10;" FontAttributes="Bold" FontSize="18"/>
+                        <Span Text="&#10;Azure App Service Web Api"/>
+                        <Span Text="&#10;Azure AD B2C"/>
+                        <Span Text="&#10;Azure B2C Tenants"/>
+                        <Span Text="&#10;Swagger"/>
+                        <Span Text="&#10;Maui Community Toolkit"/>
+                        <Span Text="&#10;Maui Community Mvvm"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <HorizontalStackLayout 
+                HorizontalOptions="Center">
+                <Button x:Name="LoginButton"
+                        Text="Log in"
+                        SemanticProperties.Hint="Log in"
+                        Command="{Binding LoginCommand}"
+                        HorizontalOptions="Center"
+                        IsEnabled="{Binding IsLoggedIn, Converter={StaticResource NegateBooleanConverter}}"
+                        Margin="8,0,8,0" />
+
+                <Button x:Name="LogoutButton"
+                        Text="Log out"
+                        SemanticProperties.Hint="Log out"
+                        Command="{Binding LogoutCommand}"
+                        HorizontalOptions="Center"
+                        IsEnabled="{Binding IsLoggedIn}"
+                        Margin="8,0,8,0" />
+            </HorizontalStackLayout>
+
+            <Button x:Name="GetWeatherForecastButton"
+                    Text="Get Weather Forecast"
+                    SemanticProperties.Hint="Get weather forecast data"
+                    Command="{Binding GetWeatherForecastCommand}"
+                    HorizontalOptions="Center"
+                    IsEnabled="{Binding IsLoggedIn}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
