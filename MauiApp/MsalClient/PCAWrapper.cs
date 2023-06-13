@@ -15,10 +15,10 @@ namespace MauiAuthApp.MsalClient
         internal IPublicClientApplication PCA { get; }
 
         internal bool UseEmbedded { get; set; } = false;
-        internal const string Authority = "https://login.microsoftonline.com/d914225b-6ecb-4950-bcbc-8634a3d4acd3";
-        internal const string ClientId = "2e840939-c614-42de-88db-acca4daf27f7";
-        internal const string TenantId = "d914225b-6ecb-4950-bcbc-8634a3d4acd3";
-        public static string[] Scopes = { "api://2e840939-c614-42de-88db-acca4daf27f7/access_as_user" };
+        internal const string Authority = "[REPLACE-WITH-YOUR-VALUE]";
+        internal const string ClientId = "[REPLACE-WITH-YOUR-VALUE]";
+        internal const string TenantId = "[REPLACE-WITH-YOUR-VALUE]";
+        public static string[] Scopes = { "api://[REPLACE-WITH-YOUR-VALUE]/access_as_user" };
 
         // private constructor for singleton
         private PCAWrapper()
