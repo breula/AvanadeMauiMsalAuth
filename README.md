@@ -12,8 +12,8 @@ se desejar que seu aplicativo seja configurado em um diretório diferente do pri
 # O que será necessário saber ou irá aprender utilizando este repositório?
 1. Converters
 2. Utilizar o MVVM **[ObservableProperty]** do Community Toolkit para tornar propriedades observáveis de maneira mais fácil, vulgo "mão na roda".
-3. Procure saber a diferenã entre injeções "AddSingleton" e "AddTransient" aconselho assistir a este vídeo: https://www.youtube.com/watch?v=oC5zpEbwViE&t=166s
-4. Criar e injetar seu própri ocontrole de Alert Messagens e Diálogos.
+3. Procure saber a diferença entre injeções "AddSingleton" e "AddTransient" aconselho assistir a este vídeo: https://www.youtube.com/watch?v=oC5zpEbwViE&t=166s
+4. Criar e injetar seu próprio controle de Alert Messagens e Diálogos.
 5. Binding utilizando ViewModel.
 6. Utilizar o novo **[RelayCommand]** trazido pelo MAUI que substitui de forma grandiosa a trabalheira de implementar na mão os Commands que são utilizados na camada de apresentação.
 
